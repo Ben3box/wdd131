@@ -1,4 +1,9 @@
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 500px) {
+    
+    header{
+        background-color: rgb(red, green, blue);
+        color: #fff;
+    }
     h1 {
         font-size: 2.5rem;
         margin: 1rem;
