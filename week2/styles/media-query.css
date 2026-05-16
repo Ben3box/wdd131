@@ -18,3 +18,19 @@ section{
     padding: 1rem;
     background-color: #fff;
 }
+@media screen and (min-width: 500px) {
+    
+    header{
+        background-color: rgb(red, green, blue);
+        color: #fff;
+    }
+    h1 {
+        font-size: 2.5rem;
+        margin: 1rem;
+        color: navy;
+    }
+    
+}
+main{
+    grid-template-columns: 1fr 1fr;
+}
