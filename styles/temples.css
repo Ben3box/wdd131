@@ -9,7 +9,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     color: #222;
     line-height: 1.6;
 }
@@ -40,7 +40,7 @@ nav{
 }
 
 nav a{
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
@@ -48,7 +48,7 @@ nav a{
 }
 
 nav a:hover{
-    color: orange;
+    color: #ffa500;
 }
 
 /* =========================
@@ -94,7 +94,7 @@ figure img{
 
     border-radius: 3px;
 
-    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: #000000;
 }
 
 /* =========================
@@ -102,7 +102,7 @@ figure img{
 ========================= */
 figcaption{
     margin-top: 10px;
-    color: #000;
+    color: #000000;
     font-size: 1rem;
 }
 
