@@ -120,4 +120,8 @@ footer{
 
     font-size: 1rem;
 }
+#lastModified {
+    color: yellow;
+    margin-top: 0.5rem;
+}
 
