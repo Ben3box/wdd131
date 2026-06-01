@@ -71,11 +71,9 @@ header h1 {
 .card {
     background-color: var(--overlay-bg);
     border: 1px solid var(--border-color);
+     box-shadow: 0 4px 15px var(--shadow-color);
     padding: 1.5rem;
     border-radius: 6px;
-}
-.card {
-    box-shadow: 0 4px 15px var(--shadow-color);
 }
 
 .card h2 {
