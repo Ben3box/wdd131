@@ -1,14 +1,3 @@
-/* --- Variables globales (Couleurs du Burundi) --- */
-:root {
-    --primary-green: #22C55E;
-    --primary-red: #DC2626;
-    --white: #FFFFFF;
-    --text-dark: #1F2937;
-    --overlay-bg: rgba(255, 255, 255, 0.85); /* Fond transparent pour les cartes */
-    --font-title: 'Montserrat', sans-serif;
-    --font-body: 'Roboto', sans-serif;
-}
-
 /* --- Réinitialisation de base --- */
 * {
     box-sizing: border-box;
@@ -17,20 +6,20 @@
 }
 
 body {
-    font-family: var(--font-body);
-    background-color: var(--white);
-    color: var(--text-dark);
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFFFFF;
+    color: #1F2937;
 }
 
 header {
-    background-color: var(--primary-red);
-    color: var(--white);
+    background-color: #DC2626;
+    color: #FFFFFF;
     text-align: center;
     padding: 1.5rem 1rem;
 }
 
 header h1 {
-    font-family: var(--font-title);
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.2rem;
 }
 
@@ -56,16 +45,16 @@ header h1 {
 }
 
 .card {
-    background-color: var(--overlay-bg);
+    background-color: rgba(255, 255, 255, 0.85);
     padding: 1.5rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 4px;
 }
 
 .card h2 {
-    font-family: var(--font-title);
-    background-color: var(--primary-green);
-    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    background-color: #22C55E;
+    color: #FFFFFF;
     padding: 0.5rem;
     margin-bottom: 1rem;
     font-size: 1.2rem;
@@ -87,8 +76,8 @@ ul li {
 
 /* --- Pied de page --- */
 footer {
-    background-color: var(--primary-green);
-    color: var(--white);
+    background-color: #22C55E;
+    color: #FFFFFF;
     text-align: center;
     padding: 1.5rem;
     font-size: 0.9rem;
@@ -97,10 +86,9 @@ footer {
 /* --- Grand écran (Design similaire à Madagascar) --- */
 @media (min-width: 768px) {
     .hero-img {
-        height: 550px; /* Fixe la hauteur de l'image de fond */
+        height: 550px;
     }
 
-    /* Rend le conteneur absolu par rapport à l'image */
     .main-container {
         position: absolute;
         top: 0;
@@ -117,15 +105,13 @@ footer {
 
     .card {
         width: 320px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
-    /* Cache l'image SVG sur desktop */
     .weather-icon-mobile {
         display: none;
     }
 
-    /* Ajoute l'émoticône météo requis après le titre via un pseudo-élément */
     .weather-heading::after {
         content: " ⛅";
     }
