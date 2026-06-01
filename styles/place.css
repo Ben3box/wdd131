@@ -1,12 +1,13 @@
-/* ==========================================
-   Variables globales (:root)
-   ========================================== */
 :root {
     --primary-green: #22C55E;
     --primary-red: #DC2626;
     --white: #FFFFFF;
     --text-dark: #1F2937;
     --overlay-bg: rgba(255, 255, 255, 0.85);
+
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.2);
+
     --font-title: 'Montserrat', sans-serif;
     --font-body: 'Roboto', sans-serif;
 }
@@ -69,9 +70,12 @@ header h1 {
 
 .card {
     background-color: var(--overlay-bg);
+    border: 1px solid var(--border-color);
     padding: 1.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 6px;
+}
+.card {
+    box-shadow: 0 4px 15px var(--shadow-color);
 }
 
 .card h2 {
