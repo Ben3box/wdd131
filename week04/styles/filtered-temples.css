@@ -22,6 +22,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
+    position: relative;
 }
 
 header h1 {
@@ -29,15 +30,13 @@ header h1 {
     font-size: 1.5rem;
 }
 
-.navigation {
-    list-style: none;
+nav {
     display: flex;
     gap: 15px;
-    margin: 0;
-    padding: 0;
+    align-items: center;
 }
 
-.navigation a {
+nav a {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: bold;
@@ -46,8 +45,19 @@ header h1 {
     transition: background 0.3s;
 }
 
-.navigation a:hover {
+nav a:hover, nav a.active {
     background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hamburger Button Settings */
+#menu {
+    display: none; /* Invisible on desktop views */
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 5px;
 }
 
 /* Main Area Layout */
@@ -108,4 +118,35 @@ footer {
     padding: 15px;
     margin-top: 40px;
     font-size: 0.85rem;
+}
+
+/* Responsive Mobile Navigation Breakpoint */
+@media (max-width: 768px) {
+    #menu {
+        display: block; /* Reveals hamburger icon */
+    }
+
+    nav {
+        display: none; /* Hides default row view */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        padding: 10px 0;
+        box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    /* Toggled state controlled by JavaScript */
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        width: 90%;
+        text-align: center;
+        padding: 10px 0;
+    }
 }

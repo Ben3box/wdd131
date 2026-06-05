@@ -1,4 +1,4 @@
-// 1. Temple Data Array (Updated with open-access development image URLs)
+// 1. Temple Data Array (Configured with stable open-access asset mirrors for local previews)
 const temples = [
   {
     templeName: "Aba Nigeria",
@@ -51,13 +51,16 @@ const temples = [
   }
 ];
 
-// 2. DOM Elements
+// 2. DOM Selection Handles
 const templeGrid = document.querySelector(".temple-grid");
 const categoryTitle = document.getElementById("category-title");
+const menuButton = document.getElementById("menu");
+const navMenu = document.querySelector("nav");
+const navLinks = document.querySelectorAll("nav a");
 
-// 3. Function to Display Temple Cards
+// 3. Render Card Function
 function displayTemples(filteredTemples) {
-    templeGrid.innerHTML = ""; // Clear existing cards
+    templeGrid.innerHTML = ""; // Empty previous array views
     
     filteredTemples.forEach(temple => {
         const card = document.createElement("section");
@@ -75,16 +78,38 @@ function displayTemples(filteredTemples) {
     });
 }
 
-// 4. Filtering Event Listeners (Added e.preventDefault() to keep links stable)
+// 4. Mobile Hamburger Navigation Logic
+menuButton.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+    // Change icon between burger (☰) and close cross (✕)
+    if (navMenu.classList.contains("open")) {
+        menuButton.innerHTML = "&#10006;";
+    } else {
+        menuButton.innerHTML = "&#9776;";
+    }
+});
+
+// Helper function to manage visual highlighting of clicked links
+function manageActiveLink(targetId) {
+    navLinks.forEach(link => link.classList.remove("active"));
+    document.getElementById(targetId).classList.add("active");
+    // Auto-collapse mobile navigation tray on item select
+    navMenu.classList.remove("open");
+    menuButton.innerHTML = "&#9776;";
+}
+
+// 5. Data Filter Channels
 document.getElementById("home").addEventListener("click", (e) => {
     e.preventDefault();
     categoryTitle.textContent = "Home";
+    manageActiveLink("home");
     displayTemples(temples);
 });
 
 document.getElementById("old").addEventListener("click", (e) => {
     e.preventDefault();
     categoryTitle.textContent = "Old Temples (Built before 1900)";
+    manageActiveLink("old");
     const oldTemples = temples.filter(t => parseInt(t.dedicated.split(",")[0].trim()) < 1900);
     displayTemples(oldTemples);
 });
@@ -92,6 +117,7 @@ document.getElementById("old").addEventListener("click", (e) => {
 document.getElementById("new").addEventListener("click", (e) => {
     e.preventDefault();
     categoryTitle.textContent = "New Temples (Built after 2000)";
+    manageActiveLink("new");
     const newTemples = temples.filter(t => parseInt(t.dedicated.split(",")[0].trim()) > 2000);
     displayTemples(newTemples);
 });
@@ -99,6 +125,7 @@ document.getElementById("new").addEventListener("click", (e) => {
 document.getElementById("large").addEventListener("click", (e) => {
     e.preventDefault();
     categoryTitle.textContent = "Large Temples (Area > 90,000 sq ft)";
+    manageActiveLink("large");
     const largeTemples = temples.filter(t => t.area > 90000);
     displayTemples(largeTemples);
 });
@@ -106,13 +133,15 @@ document.getElementById("large").addEventListener("click", (e) => {
 document.getElementById("small").addEventListener("click", (e) => {
     e.preventDefault();
     categoryTitle.textContent = "Small Temples (Area < 10,000 sq ft)";
+    manageActiveLink("small");
     const smallTemples = temples.filter(t => t.area < 10000);
     displayTemples(smallTemples);
 });
 
-// 5. Footer Date Processing
+// 6. Dynamic Footnotes Processing
 document.getElementById("currentyear").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
-// Initial load
+// Primary Application Kickstart
+manageActiveLink("home");
 displayTemples(temples);
