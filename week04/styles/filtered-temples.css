@@ -1,0 +1,111 @@
+/* Core Configurations */
+:root {
+    --primary-color: #1e427b;
+    --secondary-color: #ffffff;
+    --background-color: #f4f4f4;
+    --text-color: #333333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Header & Navigation Styling */
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.navigation a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Area Layout */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+#category-title {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Responsive CSS Grid for Temple Albums */
+.temple-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Temple Individual Cards */
+.temple-card {
+    background-color: var(--secondary-color);
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.temple-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--background-color);
+    padding-bottom: 5px;
+}
+
+.temple-card p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.temple-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-top: auto; /* Pushes image to bottom uniformly */
+}
+
+/* Footer Design */
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 0.85rem;
+}

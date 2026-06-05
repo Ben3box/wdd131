@@ -1,36 +1,39 @@
-// Footer Dates
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Dynamic Footer Date Operations
+    const currentYearElt = document.getElementById("current-year");
+    const lastModElt = document.getElementById("last-mod-date");
 
-document.getElementById("currentyear").textContent =
-    new Date().getFullYear();
+    if (currentYearElt) {
+        currentYearElt.textContent = new Date().getFullYear();
+    }
+    if (lastModElt) {
+        lastModElt.textContent = document.lastModified;
+    }
 
-document.getElementById("lastModified").textContent =
-    `Last Modified: ${document.lastModified}`;
+    // 2. Wind Chill Processing Logic
+    // Grab static structural data from your HTML elements
+    const tempElement = document.getElementById("temp-val");
+    const windElement = document.getElementById("wind-val");
+    const windChillElt = document.getElementById("windchill");
 
+    if (tempElement && windElement && windChillElt) {
+        const temperature = parseFloat(tempElement.textContent);
+        const windSpeed = parseFloat(windElement.textContent);
 
-// Static Weather Values
+        // Validation Rules Checklist check: Temp <= 10 °C and Wind Speed > 4.8 km/h
+        if (temperature <= 10 && windSpeed > 4.8) {
+            const calculatedChill = calculateWindChill(temperature, windSpeed);
+            windChillElt.textContent = `${calculatedChill.toFixed(1)} °C`;
+        } else {
+            windChillElt.textContent = "N/A";
+        }
+    }
+});
 
-const temperature = 8;
-const windSpeed = 10;
-
-
-// Wind Chill Function
-
+/**
+ * Metric Wind Chill Calculation Utility Formula (Celsius / km/h)
+ * Formulated to run efficiently on a single calculation line.
+ */
 function calculateWindChill(temp, speed) {
-    return (
-        13.12 +
-        0.6215 * temp -
-        11.37 * Math.pow(speed, 0.16) +
-        0.3965 * temp * Math.pow(speed, 0.16)
-    ).toFixed(1);
+    return 13.12 + (0.6215 * temp) - (11.37 * Math.pow(speed, 0.16)) + (0.3965 * temp * Math.pow(speed, 0.16));
 }
-
-
-// Display Wind Chill
-
-let windChill = "N/A";
-
-if (temperature <= 10 && windSpeed > 4.8) {
-    windChill = `${calculateWindChill(temperature, windSpeed)} °C`;
-}
-
-document.getElementById("windchill").textContent = windChill;
