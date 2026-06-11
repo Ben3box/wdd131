@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Burundi | Contact</title>
+    <link rel="stylesheet" href="styles/travel.css">
+</head>
+<body>
+
+<header>
+    <h1>Contact Us</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="attractions.html">Attractions</a></li>
+            <li><a href="culture.html">Culture</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <form id="contactForm">
+        <label for="userName">Name</label>
+        <input type="text" id="userName" required>
+
+        <label for="userEmail">Email</label>
+        <input type="email" id="userEmail" required>
+
+        <label for="userMessage">Message</label>
+        <!-- FIXED: Combined 'text area' into 'textarea' -->
+        <textarea id="userMessage" rows="5" required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2026 Travel Burundi</p>
+</footer>
+
+<script src="scripts/travel.js"></script>
+
+</body>
+</html>
