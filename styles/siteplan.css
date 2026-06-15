@@ -8,12 +8,15 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #F9F6F0;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Keeps footer at the bottom if content is short */
 }
 
 header,
@@ -38,6 +41,62 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+}
+
+.portal-header {
+    background-color: #115740; /* Deep Forest Green */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 2rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Main content layout spacing */
+.portal-main {
+    flex: 1; /* Pushes the footer down to the bottom of the window */
+    max-width: 600px;
+    width: 100%;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+/* Central Content Card */
+.portal-card {
+    background: #FFFFFF;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Navigation Button */
+.portal-btn {
+    display: inline-block;
+    background-color: #D12421; /* Warm Clay Red */
+    color: #FFFFFF;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.portal-btn:hover {
+    background-color: #b01c19;
+}
+
+/* Full width footer touching all angles */
+.portal-footer {
+    background-color: #115740; /* Deep Forest Green */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
 }
 
 /* This styles the rest of the page headings green */
