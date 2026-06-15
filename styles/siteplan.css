@@ -1,0 +1,104 @@
+/* Import planned typography fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Base styling resets */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F9F6F0; /* Sand Off-White */
+    color: #333333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #115740; /* Deep Forest Green */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1, h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    background: #FFFFFF;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+section h2 {
+    color: #115740;
+    border-bottom: 2px solid #D12421; /* Warm Clay Red accent line */
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+a {
+    color: #D12421;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Color Palette Visual Blocks Grid */
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.color-box {
+    padding: 1.5rem;
+    border-radius: 6px;
+    color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.color-box code {
+    display: block;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.2rem 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    width: fit-content;
+}
+
+.color-box p {
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0 0;
+}
+
+.primary-box { background-color: #115740; }
+.secondary-box { background-color: #D12421; }
+.background-box { 
+    background-color: #F9F6F0; 
+    color: #333333; 
+    border: 1px solid #DDDDDD;
+}
+.background-box code { background: rgba(0, 0, 0, 0.05); }
+
+/* Wireframe block styling */
+.wireframe-mobile-placeholder, .wireframe-desktop-placeholder {
+    background: #EEEEEE;
+    border: 2px dashed #999999;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+}
