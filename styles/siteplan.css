@@ -1,0 +1,50 @@
+/* Base Page Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #F9F6F0; /* Clean light background color */
+    color: #333333;
+}
+
+/* Header Styling */
+.portal-header {
+    background-color: #115740; /* Deep Forest Green */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* Main Layout Wrapper */
+.portal-main {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+/* Central Content Container Card */
+.portal-card {
+    background: #FFFFFF;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Navigation Button Link */
+.portal-btn {
+    display: inline-block;
+    background-color: #D12421; /* Warm Clay Red */
+    color: #FFFFFF;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.portal-btn:hover {
+    background-color: #b01c19; /* Darker red on hover */
+}
