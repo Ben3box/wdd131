@@ -183,3 +183,20 @@ textarea:focus {
 footer p { margin: 0; font-family: 'Open Sans', sans-serif; }
 footer p:first-of-type { font-weight: 600; margin-bottom: 0.3rem; }
 #lastModified { font-size: 0.85rem; opacity: 0.85; }
+
+/* --- Added: Responsive Layout Media Query --- */
+@media (min-width: 600px) {
+    main {
+        margin: 4rem auto; /* Gives the form layout a more spacious top/bottom margin on large displays */
+    }
+
+    .form-container {
+        padding: 3.5rem; /* Increases internal card padding for desktop screens */
+        border: 1px solid #E0E0E0;
+    }
+
+    /* Expands form labels slightly on larger displays for better legibility */
+    .form-group > label {
+        font-size: 1.05rem;
+    }
+}
