@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Review Confirmed - Travel Burundi</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/form.css">
 </head>
 <body>
-    
+
+    <header>
+        <h1>Travel Burundi</h1>
+        <p>Submission Panel</p>
+    </header>
+
+    <main>
+        <section class="form-container confirmation-card">
+            <h2>Thank You for Your Feedback!</h2>
+            <p>Your review has been successfully processed and submitted.</p>
+            
+            <div class="counter-display">
+                <p>Total Reviews Completed: <strong id="review-count">0</strong></p>
+            </div>
+
+            <a href="form.html" class="back-link">← Submit Another Review</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Benjamin Iriganje, Burundi</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script src="scripts/form.js"></script>
 </body>
 </html>

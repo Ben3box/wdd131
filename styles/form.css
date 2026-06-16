@@ -1,0 +1,185 @@
+/* site styles & custom styling properties */
+:root {
+    --primary-color: #115740;
+    --secondary-color: #D12421;
+    --background-color: #F9F6F0;
+    --card-background: #FFFFFF;
+    --text-color: #333333;
+    --border-color: #CCCCCC;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 0 5px 0;
+}
+
+header p { margin: 0; font-size: 1.1rem; opacity: 0.9; }
+
+main {
+    flex: 1;
+    max-width: 650px;
+    width: 100%;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+/* Container Structure */
+.form-container {
+    background: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* Functional Group Blocks */
+.form-group {
+    margin-bottom: 1.8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group > label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.required { color: var(--secondary-color); }
+
+/* Field Component Targets */
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(17, 87, 64, 0.15);
+}
+
+/* CSS Radio Star Rating Framework */
+.rating-container {
+    display: flex;
+    flex-direction: row-reverse; /* Reverses execution order for easy CSS selection */
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.rating-container input[type="radio"] {
+    display: none; /* Safely masks standard circles */
+}
+
+.rating-container label {
+    font-size: 2rem;
+    color: #DDDDDD;
+    cursor: pointer;
+    transition: color 0.1s ease;
+}
+
+/* CSS Siblings Rule: Fills and colors stars from right-to-left */
+.rating-container input[type="radio"]:checked ~ label,
+.rating-container label:hover,
+.rating-container label:hover ~ label {
+    color: #FFC107; /* Bright Star Gold */
+    content: "★";
+}
+
+/* Checkbox Configuration Layout */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Action Execution Element */
+.submit-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover { background-color: #B01C19; }
+
+/* Review Confirmation Enhancements */
+.confirmation-card { text-align: center; }
+.counter-display {
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    border-left: 5px solid var(--primary-color);
+}
+.counter-display strong { font-size: 1.5rem; color: var(--primary-color); }
+.back-link {
+    display: inline-block;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+.back-link:hover { text-decoration: underline; }
+
+/* Custom Footer Paragraph Alignment Layouts */
+footer p { margin: 0; font-family: 'Open Sans', sans-serif; }
+footer p:first-of-type { font-weight: 600; margin-bottom: 0.3rem; }
+#lastModified { font-size: 0.85rem; opacity: 0.85; }
