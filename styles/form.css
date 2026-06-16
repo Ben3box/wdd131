@@ -2,10 +2,14 @@
 :root {
     --primary-color: #115740;
     --secondary-color: #D12421;
+    --secondary-hover: #B01C19; /* Standardized hex addition */
     --background-color: #F9F6F0;
     --card-background: #FFFFFF;
     --text-color: #333333;
     --border-color: #CCCCCC;
+    --star-gold: #FFC107;       /* Standardized hex addition */
+    --star-empty: #DDDDDD;      /* Standardized hex addition */
+    --pure-white: #FFFFFF;      /* Eliminated named color 'white' */
 }
 
 body {
@@ -20,9 +24,9 @@ body {
     min-height: 100vh;
 }
 
-header, footer {
+header {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--pure-white); /* Updated */
     text-align: center;
     padding: 1.5rem 1rem;
 }
@@ -32,7 +36,40 @@ header h1 {
     margin: 0 0 5px 0;
 }
 
-header p { margin: 0; font-size: 1.1rem; opacity: 0.9; }
+header p { 
+    margin: 0; 
+    font-size: 1.1rem; 
+    opacity: 0.9; 
+}
+
+/* Navigation Menu Styles */
+nav {
+    background-color: #0b3d2c; /* Consistent hex */
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--pure-white); /* Updated */
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--star-gold); /* Updated */
+}
 
 main {
     flex: 1;
@@ -48,7 +85,7 @@ main {
     background: var(--card-background);
     padding: 2.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* RGBA is acceptable for shadows */
 }
 
 .form-container h2 {
@@ -93,34 +130,32 @@ select:focus,
 textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(17, 87, 64, 0.15);
+    box-shadow: 0 0 0 2px rgba(17, 87, 64, 0.15); /* RGBA is acceptable for focus outlines */
 }
 
 /* CSS Radio Star Rating Framework */
 .rating-container {
     display: flex;
-    flex-direction: row-reverse; /* Reverses execution order for easy CSS selection */
+    flex-direction: row-reverse;
     justify-content: flex-end;
     gap: 4px;
 }
 
 .rating-container input[type="radio"] {
-    display: none; /* Safely masks standard circles */
+    display: none;
 }
 
 .rating-container label {
     font-size: 2rem;
-    color: #DDDDDD;
+    color: var(--star-empty); /* Updated */
     cursor: pointer;
     transition: color 0.1s ease;
 }
 
-/* CSS Siblings Rule: Fills and colors stars from right-to-left */
 .rating-container input[type="radio"]:checked ~ label,
 .rating-container label:hover,
 .rating-container label:hover ~ label {
-    color: #FFC107; /* Bright Star Gold */
-    content: "★";
+    color: var(--star-gold); /* Updated */
 }
 
 /* Checkbox Configuration Layout */
@@ -144,9 +179,9 @@ textarea:focus {
 }
 
 /* Action Execution Element */
-.submit-btn {
+input[type="submit"] {
     background-color: var(--secondary-color);
-    color: white;
+    color: var(--pure-white); /* Updated */
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
@@ -158,7 +193,9 @@ textarea:focus {
     transition: background-color 0.2s ease;
 }
 
-.submit-btn:hover { background-color: #B01C19; }
+input[type="submit"]:hover { 
+    background-color: var(--secondary-hover); /* Updated */
+}
 
 /* Review Confirmation Enhancements */
 .confirmation-card { text-align: center; }
@@ -180,22 +217,26 @@ textarea:focus {
 .back-link:hover { text-decoration: underline; }
 
 /* Custom Footer Paragraph Alignment Layouts */
+footer {
+    background-color: var(--primary-color);
+    color: var(--pure-white); /* Updated */
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+}
 footer p { margin: 0; font-family: 'Open Sans', sans-serif; }
 footer p:first-of-type { font-weight: 600; margin-bottom: 0.3rem; }
 #lastModified { font-size: 0.85rem; opacity: 0.85; }
 
-/* --- Added: Responsive Layout Media Query --- */
+/* Responsive Layout Media Query */
 @media (min-width: 600px) {
     main {
-        margin: 4rem auto; /* Gives the form layout a more spacious top/bottom margin on large displays */
+        margin: 4rem auto;
     }
-
     .form-container {
-        padding: 3.5rem; /* Increases internal card padding for desktop screens */
-        border: 1px solid #E0E0E0;
+        padding: 3.5rem;
+        border: 1px solid #E0E0E0; /* Consistent hex usage */
     }
-
-    /* Expands form labels slightly on larger displays for better legibility */
     .form-group > label {
         font-size: 1.05rem;
     }
