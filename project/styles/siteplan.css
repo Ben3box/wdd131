@@ -193,7 +193,7 @@ a:hover {
 .wireframe-desktop-placeholder{
     max-width: 300px;
     margin-left:auto;
-    margin-right:auto; /*centers the desktop card */
+    margin-right:auto;
 }
 
 /* Ensure images scale responsibly inside the boxes */
@@ -217,8 +217,14 @@ a:hover {
 }
 footer {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--background-color);
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+}
+/* Specific styling for the last modified date */
+#lastModified {
+    font-size: 1rem;        /* Makes the timestamp smaller so it's less distracting */
+    color: var(--background-color);            /* Sand Off-White (Matches your background canvas theme) */
+    opacity: 0.6;             /* Slightly fades the text for clean visual hierarchy */
 }
